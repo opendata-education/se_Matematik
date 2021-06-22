@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -37,11 +37,14 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -298,23 +301,11 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="mi">8</span><span class="n">adeccf83eb1</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>  <span class="c1"># matplotlib.pyplot innehåller verktyg för att rita grafer och diagram.</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>              <span class="c1"># pandas låter oss läsa in en datafil och spara den som en variabel i python.</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <div class="section" id="csv-filer">
 <h2>CSV-filer<a class="headerlink" href="#csv-filer" title="Permalink to this headline">¶</a></h2>
 <p>Många datafiler är i .csv-format (comma separated values). En tabell i ett kalkylblad kan sparas som .csv, och ser då ut ungefär så här:</p>
-<a class="reference internal image-reference" href="../_images/csvstudentexempel.PNG"><img alt="../_images/csvstudentexempel.PNG" src="../_images/csvstudentexempel.PNG" style="width: 250px;" /></a>
+<img src="files/csvstudentexempel.PNG" width=250>
 <p>Csv-filer kan importeras till python, och blir då till en typ av tabellvariabel som kallas DataFrame.
 Eftersom största delen av open data-filer är tillgängliga som .csv, ska vi här se på hur man hanterar sådana tabeller.</p>
 </div>
@@ -330,16 +321,111 @@ Eftersom största delen av open data-filer är tillgängliga som .csv, ska vi h�
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="mf">7470e5</span><span class="n">be9189</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">energi</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;files/global-energy-substitution.csv&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">energi</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;pd&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Year</th>
+      <th>Wind (TWh)</th>
+      <th>Oil (TWh)</th>
+      <th>Nuclear (TWh)</th>
+      <th>Hydropower (TWh)</th>
+      <th>Biomass (TWh)</th>
+      <th>Other renewables (TWh)</th>
+      <th>Biofuels (TWh)</th>
+      <th>Solar (TWh)</th>
+      <th>Coal (TWh)</th>
+      <th>Gas (TWh)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1800</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>5556</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>97</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1810</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>5833</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>128</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1820</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>6111</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>153</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1830</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>6389</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>264</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1840</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>6944</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>356</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Nu vill vi kunna sålla ut information ur tabellen. Här följer några metoder:</p>
 <div class="section" id="kolumn">
