@@ -3,6 +3,7 @@
 - file: intro
 - part: Övningar
   chapters:
+  - file: ovningar/test
   - file: ovningar/intro_1_jupyter_python
   - file: ovningar/intro_2_statistik_i_python
   - file: ovningar/guide_statistik_i_python
